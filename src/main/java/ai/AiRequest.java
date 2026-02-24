@@ -1,6 +1,7 @@
 package ai;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class AiRequest implements Serializable {
 
@@ -10,6 +11,13 @@ public class AiRequest implements Serializable {
 	private String prompt;
 	private Boolean stream = false;
 	private String system;
+	private List<Message> messages;
+
+	public AiRequest(final String prompt, final Boolean stream, final List<Message> messages) {
+		this.prompt = prompt;
+		this.stream = stream;
+		this.messages = messages;
+	}
 
 	public AiRequest(final String prompt, final Boolean stream) {
 		this.prompt = prompt;
@@ -46,6 +54,14 @@ public class AiRequest implements Serializable {
 
 	public void setSystem(String system) {
 		this.system = system;
+	}
+
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
 	}
 
 }

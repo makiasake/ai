@@ -6,7 +6,7 @@ import java.util.List;
 public class AiResponse implements Serializable {
 
 	private static final long serialVersionUID = -2517612300475324691L;
-	
+
 	private String model;
 	private String created_at;
 	private String response;
@@ -19,13 +19,14 @@ public class AiResponse implements Serializable {
 	private Integer prompt_eval_duration;
 	private Integer eval_count;
 	private Integer eval_duration;
+	private Message message;
 
 	public AiResponse() {
 	}
 
 	public AiResponse(String model, String created_at, String response, Boolean done, String done_reason,
 			List<Integer> context, Integer total_duration, Integer load_duration, Integer prompt_eval_count,
-			Integer prompt_eval_duration, Integer eval_count, Integer eval_duration) {
+			Integer prompt_eval_duration, Integer eval_count, Integer eval_duration, Message message) {
 		this.model = model;
 		this.created_at = created_at;
 		this.response = response;
@@ -38,6 +39,7 @@ public class AiResponse implements Serializable {
 		this.prompt_eval_duration = prompt_eval_duration;
 		this.eval_count = eval_count;
 		this.eval_duration = eval_duration;
+		this.message = message;
 	}
 
 	public String getModel() {
@@ -134,6 +136,14 @@ public class AiResponse implements Serializable {
 
 	public void setEval_duration(Integer eval_duration) {
 		this.eval_duration = eval_duration;
+	}
+
+	public Message getMessage() {
+		return message;
+	}
+
+	public void setMessage(Message message) {
+		this.message = message;
 	}
 
 }

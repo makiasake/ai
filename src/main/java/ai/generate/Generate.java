@@ -32,7 +32,7 @@ public class Generate {
 				break;
 
 			try {
-				final AiResponse response = new Generate().send(new AiRequest(prompt, false));
+				final AiResponse response = send(new AiRequest(prompt, false));
 				System.out.println(response.getResponse());
 
 			} catch (Exception ex) {

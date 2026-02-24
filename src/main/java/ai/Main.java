@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import org.apache.commons.lang3.Strings;
 
+import ai.chat.Chat;
 import ai.generate.Generate;
 
 public class Main {
@@ -19,7 +20,7 @@ public class Main {
 				new Generate().chat(scanner);
 				break;
 			} else if (Strings.CI.equals(response, "chat")) {
-				System.out.println("Not implemented.");
+				new Chat().chat(scanner);
 				break;
 			} else if (Strings.CI.equals(response, "quit")) {
 				System.out.println("Bye!");
