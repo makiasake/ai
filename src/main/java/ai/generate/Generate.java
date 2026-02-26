@@ -12,8 +12,8 @@ import org.apache.http.util.EntityUtils;
 
 import com.google.gson.Gson;
 
-import ai.AiRequest;
-import ai.AiResponse;
+import ai.dto.AiRequest;
+import ai.dto.AiResponse;
 
 public class Generate {
 

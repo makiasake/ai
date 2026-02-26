@@ -1,4 +1,4 @@
-package ai;
+package ai.dto;
 
 import java.io.Serializable;
 

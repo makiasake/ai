@@ -1,0 +1,57 @@
+package ai.sound;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.LineEvent.Type;
+import javax.sound.sampled.LineListener;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+public class SoundPlayer {
+
+	public void play(final File soundFile)
+			throws IOException, UnsupportedAudioFileException, LineUnavailableException, InterruptedException {
+
+		class AudioListener implements LineListener {
+			private boolean done = false;
+
+			@Override
+			public synchronized void update(LineEvent event) {
+				Type eventType = event.getType();
+				if (eventType == Type.STOP || eventType == Type.CLOSE) {
+					done = true;
+					notifyAll();
+				}
+			}
+
+			public synchronized void waitUntilDone() throws InterruptedException {
+				while (!done) {
+					wait();
+				}
+			}
+		}
+
+		final AudioListener listener = new AudioListener();
+		final AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+		try {
+			final Clip clip = AudioSystem.getClip();
+			clip.addLineListener(listener);
+			clip.open(audioInputStream);
+			try {
+				clip.start();
+				listener.waitUntilDone();
+			} finally {
+				clip.close();
+			}
+		} finally {
+			audioInputStream.close();
+		}
+
+	}
+
+}

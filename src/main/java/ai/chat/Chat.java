@@ -14,9 +14,9 @@ import org.apache.http.util.EntityUtils;
 
 import com.google.gson.Gson;
 
-import ai.AiRequest;
-import ai.AiResponse;
-import ai.Message;
+import ai.dto.AiRequest;
+import ai.dto.AiResponse;
+import ai.dto.Message;
 
 public class Chat {
 
