@@ -1,6 +1,7 @@
 package ai.util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -24,7 +25,8 @@ public class Util {
 
 	}
 
-	public void runCommand(final List<String> command) throws IOException, InterruptedException {
+	public void runCommand(final List<String> command, final boolean printOutput)
+			throws IOException, InterruptedException {
 
 		ProcessBuilder pb = new ProcessBuilder(command);
 		pb.redirectErrorStream(true);
@@ -38,8 +40,16 @@ public class Util {
 		}
 
 		int exitCode = process.waitFor(); // Wait for the process to complete
-		System.out.println("Python script exited with code: " + exitCode);
-		System.out.println("Script Output:\n" + output.toString());
+
+		if (printOutput) {
+			System.out.println("Python script exited with code: " + exitCode);
+			System.out.println("Script Output:\n" + output.toString());
+		}
+
+	}
+
+	public void deleteFiles(final List<File> files) {
+		files.stream().forEach(f -> f.delete());
 	}
 
 }

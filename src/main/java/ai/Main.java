@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.apache.commons.lang3.Strings;
 
 import ai.chat.Chat;
+import ai.chat.ChatWithAudio;
 import ai.generate.Generate;
 
 public class Main {
@@ -22,6 +23,10 @@ public class Main {
 			} else if (Strings.CI.equals(response, "chat")) {
 				new Chat().chat(scanner);
 				break;
+			} else if (Strings.CI.equals(response, "audio-chat")) {
+				new ChatWithAudio().chat(scanner);
+				break;
+
 			} else if (Strings.CI.equals(response, "quit")) {
 				System.out.println("Bye!");
 				break;
@@ -34,6 +39,7 @@ public class Main {
 		}
 
 		scanner.close();
+
 	}
 
 	private static String initialPrompt(final Scanner scanner) {
@@ -41,6 +47,7 @@ public class Main {
 		System.out.println("Which mode to use?");
 		System.out.println("generate");
 		System.out.println("chat");
+		System.out.println("audio-chat");
 		System.out.println("Or type quit to exit the program.");
 
 		final String response = scanner.nextLine();
