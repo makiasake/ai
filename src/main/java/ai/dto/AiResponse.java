@@ -13,20 +13,20 @@ public class AiResponse implements Serializable {
 	private Boolean done;
 	private String done_reason;
 	private List<Integer> context;
-	private Integer total_duration;
-	private Integer load_duration;
-	private Integer prompt_eval_count;
-	private Integer prompt_eval_duration;
-	private Integer eval_count;
-	private Integer eval_duration;
+	private Float total_duration;
+	private Float load_duration;
+	private Float prompt_eval_count;
+	private Float prompt_eval_duration;
+	private Float eval_count;
+	private Float eval_duration;
 	private Message message;
 
 	public AiResponse() {
 	}
 
 	public AiResponse(String model, String created_at, String response, Boolean done, String done_reason,
-			List<Integer> context, Integer total_duration, Integer load_duration, Integer prompt_eval_count,
-			Integer prompt_eval_duration, Integer eval_count, Integer eval_duration, Message message) {
+			List<Integer> context, Float total_duration, Float load_duration, Float prompt_eval_count,
+			Float prompt_eval_duration, Float eval_count, Float eval_duration, Message message) {
 		this.model = model;
 		this.created_at = created_at;
 		this.response = response;
@@ -90,51 +90,51 @@ public class AiResponse implements Serializable {
 		this.context = context;
 	}
 
-	public Integer getTotal_duration() {
+	public Float getTotal_duration() {
 		return total_duration;
 	}
 
-	public void setTotal_duration(Integer total_duration) {
+	public void setTotal_duration(Float total_duration) {
 		this.total_duration = total_duration;
 	}
 
-	public Integer getLoad_duration() {
+	public Float getLoad_duration() {
 		return load_duration;
 	}
 
-	public void setLoad_duration(Integer load_duration) {
+	public void setLoad_duration(Float load_duration) {
 		this.load_duration = load_duration;
 	}
 
-	public Integer getPrompt_eval_count() {
+	public Float getPrompt_eval_count() {
 		return prompt_eval_count;
 	}
 
-	public void setPrompt_eval_count(Integer prompt_eval_count) {
+	public void setPrompt_eval_count(Float prompt_eval_count) {
 		this.prompt_eval_count = prompt_eval_count;
 	}
 
-	public Integer getPrompt_eval_duration() {
+	public Float getPrompt_eval_duration() {
 		return prompt_eval_duration;
 	}
 
-	public void setPrompt_eval_duration(Integer prompt_eval_duration) {
+	public void setPrompt_eval_duration(Float prompt_eval_duration) {
 		this.prompt_eval_duration = prompt_eval_duration;
 	}
 
-	public Integer getEval_count() {
+	public Float getEval_count() {
 		return eval_count;
 	}
 
-	public void setEval_count(Integer eval_count) {
+	public void setEval_count(Float eval_count) {
 		this.eval_count = eval_count;
 	}
 
-	public Integer getEval_duration() {
+	public Float getEval_duration() {
 		return eval_duration;
 	}
 
-	public void setEval_duration(Integer eval_duration) {
+	public void setEval_duration(Float eval_duration) {
 		this.eval_duration = eval_duration;
 	}
 

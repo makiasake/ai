@@ -7,6 +7,7 @@ public class AiRequest implements Serializable {
 
 	private static final long serialVersionUID = 7883522951553838590L;
 
+	// llama3.2
 	private String model = "llama3.2";
 	private String prompt;
 	private Boolean stream = false;

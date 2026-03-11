@@ -42,5 +42,38 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<!-- Source: https://mvnrepository.com/artifact/net.java.dev.jna/jna -->
+		<dependency>
+			<groupId>net.java.dev.jna</groupId>
+			<artifactId>jna</artifactId>
+			<version>5.18.1</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Source: https://mvnrepository.com/artifact/com.alphacephei/vosk -->
+		<dependency>
+			<groupId>com.alphacephei</groupId>
+			<artifactId>vosk</artifactId>
+			<version>0.3.45</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Source:
+		https://mvnrepository.com/artifact/org.java-websocket/Java-WebSocket -->
+		<dependency>
+			<groupId>org.java-websocket</groupId>
+			<artifactId>Java-WebSocket</artifactId>
+			<version>1.6.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Source: https://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>33.5.0-jre</version>
+			<scope>compile</scope>
+		</dependency>
+
 	</dependencies>
 </project>
